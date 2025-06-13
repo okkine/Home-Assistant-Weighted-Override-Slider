@@ -34,24 +34,27 @@ NOTE: When downloading, make sure to use the Raw button from each file's page.
 After it has been downloaded you will need to restart Home Assistant, and clear the cache.
 
 # Setup:
-
-
-          input_entity: #Required
-          output_entity: #Required
-          color_entity: #Optional
-          name: #Optional
-          slider_min: #Default -100
-          slider_max: #Default 100
-          input_min: #Default 0
-          input_max: #Default 100
-          step: #Default 1
-          unit: "%"
-          dynamic_handle_color: #Default false. If true, The the center of the handle changes color with the light, and not just the border.
-          handle_color: #Default #ffffff. 
-          handle_border_color: #Default "#03a9f5"
-          handle_shadow_color: #Default "#1c1c1c". Use eight character hex to control shadow alpha. Example: #1c1c1c00 for no shadow.
-          slider_color: #Default "#1c1c1c" 
-          slider_background_color: #Default "#323232" 
+    type: vertical-stack
+    cards:
+      - type: entities
+        entities:
+          - type: custom:weighted-slider-card
+            input_entity: #Required
+            output_entity: #Required
+            color_entity: #Optional
+            name: #Optional
+            slider_min: #Default -100
+            slider_max: #Default 100
+            input_min: #Default 0
+            input_max: #Default 100
+            step: #Default 1
+            unit: "%"
+            dynamic_handle_color: #Default false. If true, The the center of the handle changes color with the light, and not just the border.
+            handle_color: #Default #ffffff. 
+            handle_border_color: #Default "#03a9f5"
+            handle_shadow_color: #Default "#1c1c1c". Use eight character hex to control shadow alpha. Example: #1c1c1c00 for no shadow.
+            slider_color: #Default "#1c1c1c" 
+            slider_background_color: #Default "#323232" 
 
 ### To approximate home assistant slider style, use the following:
           dynamic_handle_color: true
