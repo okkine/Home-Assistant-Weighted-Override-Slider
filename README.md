@@ -3,8 +3,8 @@
 Allows users to effortlessly override any automated value (like brightness or color temperature) using a simple slider:
 
 - 0:        Fully automatic mode (output matches input)
-- 0 to 100:  Output adjusts as a percentage between the input's automated value and its maximum.
-- 0 to -100: Output adjusts as a percentage between the input's automated value and its minimum.
+- 0 to 100:  Output adjusts as a percentage between the input's automated value and its maximum value.
+- 0 to -100: Output adjusts as a percentage between the input's automated value and its minimum value.
 
 # Additional Features:
 
