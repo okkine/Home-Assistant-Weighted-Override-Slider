@@ -19,9 +19,9 @@ Allows users to effortlessly override any automated value (like brightness or co
   
 <br>
 <br>
-<img align="center" width="30%" height="30%" src="https://github.com/user-attachments/assets/1ef01fa5-c315-4739-aa01-d0a06dfd55a4">
+<img align="center" width="40%" height="30%" src="https://github.com/user-attachments/assets/1ef01fa5-c315-4739-aa01-d0a06dfd55a4">
 <br>
-<img align="center" width="30%" height="30%" src="https://github.com/user-attachments/assets/df8ef0e5-1458-4d44-9183-acce5d5a98ba">
+<img align="center" width="40%" height="30%" src="https://github.com/user-attachments/assets/df8ef0e5-1458-4d44-9183-acce5d5a98ba">
 <br>
 <br>
 
