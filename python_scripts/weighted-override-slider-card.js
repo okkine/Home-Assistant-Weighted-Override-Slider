@@ -28,24 +28,17 @@ class WeightedOverrideSliderCard extends HTMLElement {
   }
 
   getLightColor() {
-    // 1. Default to slider_color if no color_entity specified
     if (!this.config.color_entity) return this.config.slider_color || '#4473a0';
     
-    // 2. Get the color entity state
     const colorState = this._hass.states[this.config.color_entity];
     
-    // 3. Grey if color entity unavailable
     if (!colorState || colorState.state === 'unavailable') return '#808080';
-    
-    // 4. Use slider_color (or default) if light is off
     if (colorState.state === 'off') return this.config.slider_color || '#4473a0';
     
-    // 5. Calculate brightness (0-255 → 0.5-1.0 range)
     const brightness = colorState.attributes.brightness 
       ? 0.5 + (colorState.attributes.brightness / 255) / 2
       : 1;
     
-    // 6. Check for color attributes
     if (colorState.attributes.rgb_color) {
       const [r, g, b] = colorState.attributes.rgb_color;
       return `rgb(${Math.round(r * brightness)}, ${Math.round(g * brightness)}, ${Math.round(b * brightness)})`;
@@ -69,7 +62,6 @@ class WeightedOverrideSliderCard extends HTMLElement {
       return `rgb(${Math.round(red * brightness)}, ${Math.round(red * brightness)}, ${Math.round(blue * brightness)})`;
     }
     
-    // 7. Fallback orange for lights with no color info
     const [r, g, b] = this.hexToRgb('#fec007');
     return `rgb(${Math.round(r * brightness)}, ${Math.round(g * brightness)}, ${Math.round(b * brightness)})`;
   }
@@ -128,6 +120,7 @@ class WeightedOverrideSliderCard extends HTMLElement {
       unit = '%',
       icon,
       handle_color = '#ffffff',
+      dynamic_handle_color = false,
       handle_shadow_color = '#1c1c1c',
       slider_color = '#4473a0',
       slider_background_color = '#323232'
@@ -139,9 +132,9 @@ class WeightedOverrideSliderCard extends HTMLElement {
       return;
     }
 
-    // Get the dynamic light color
     const lightColor = this.getLightColor();
     const center_text = icon ? '40px' : '0px';
+    const handleBackgroundColor = dynamic_handle_color ? lightColor : handle_color;
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -223,7 +216,7 @@ class WeightedOverrideSliderCard extends HTMLElement {
           height: 14px !important;
           top: -5px !important;
           right: -5px !important;
-          background: ${handle_color} !important;
+          background: ${handleBackgroundColor} !important;
           border: 2px solid ${lightColor} !important;
           border-radius: 50%;
           box-shadow: 0 0 8px 3px ${handle_shadow_color} !important; 
