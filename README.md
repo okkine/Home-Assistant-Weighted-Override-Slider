@@ -6,7 +6,7 @@ Allows users to effortlessly override any automated value (like brightness or co
 - 0 - 100: Output adjusts as a percentage between the input's automated value and its maximum.
 - 0 to -100: Output adjusts as a percentage between the input's automated value and its minimum.
 
-Additional Features:
+# Additional Features:
 
 - Customizable color scheme
 - Dynamic color matching (if a color_entity is provided):
@@ -17,7 +17,7 @@ Additional Features:
 - Input range control: Customize min/max values for the input.
 
 
-Installation:
+# Installation:
 
 Place a copy of the files into your www folder.
 
@@ -25,7 +25,7 @@ NOTE: When downloading, make sure to use the Raw button from each file's page.
 
 After it has been downloaded you will need to restart Home Assistant, and clear the cache.
 
-Setup
+# Setup:
 
 
           input_entity: #Required
@@ -38,13 +38,15 @@ Setup
           input_max: #Default 100
           step: #Default 1
           unit: "%"
+          dynamic_handle_color: #Default false. If true, The the center of the handle changes color with the light, and not just the border.
           handle_color: #Default #ffffff. 
           handle_border_color: #Default "#03a9f5"
           handle_shadow_color: #Default "#1c1c1c" 
           slider_color: #Default "#1c1c1c" 
           slider_background_color: #Default "#323232" 
 
-          To approximate home assistant slider style, use the following:
+### To approximate home assistant slider style, use the following:
+          dynamic_handle_color: true
           handle_color: "#03a9f5" 
           handle_border_color:  "#03a9f5" 
           handle_shadow_color: "#03a9f500" 
