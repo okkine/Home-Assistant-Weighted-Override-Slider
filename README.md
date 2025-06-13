@@ -16,6 +16,14 @@ Allows users to effortlessly override any automated value (like brightness or co
 - Flexible slider range: Adjust min/max values for the slider.
 - Input range control: Customize min/max values for the input.
 
+  
+<br>
+<br>
+<img align="center" width="30%" height="30%" src="https://github.com/user-attachments/assets/1ef01fa5-c315-4739-aa01-d0a06dfd55a4">
+<br>
+<img align="center" width="30%" height="30%" src="https://github.com/user-attachments/assets/df8ef0e5-1458-4d44-9183-acce5d5a98ba">
+<br>
+<br>
 
 # Installation:
 
@@ -41,7 +49,7 @@ After it has been downloaded you will need to restart Home Assistant, and clear 
           dynamic_handle_color: #Default false. If true, The the center of the handle changes color with the light, and not just the border.
           handle_color: #Default #ffffff. 
           handle_border_color: #Default "#03a9f5"
-          handle_shadow_color: #Default "#1c1c1c" 
+          handle_shadow_color: #Default "#1c1c1c". Use eight character hex to control shadow alpha. Example: #1c1c1c00 for no shadow.
           slider_color: #Default "#1c1c1c" 
           slider_background_color: #Default "#323232" 
 
